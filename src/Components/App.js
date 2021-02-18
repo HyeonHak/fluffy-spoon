@@ -1,6 +1,15 @@
 import React, { Component } from 'react';
+
+import Header from './Header';
+import Router from './Router';
+
 function App() {
-  return <div className="App"></div>;
+  return (
+    <>
+      <Header />
+      <Router />
+    </>
+  );
 }
 
 export default App;
