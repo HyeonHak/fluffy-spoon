@@ -1,4 +1,4 @@
-export { default as Home } from './Home';
-export { default as Detail } from './Detail';
-export { default as Search } from './Search';
-export { default as TV } from './TV';
+export { default as Home } from './Home/index';
+export { default as Detail } from './Detail/index';
+export { default as Search } from './Search/index';
+export { default as TV } from './TV/index';
