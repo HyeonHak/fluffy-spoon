@@ -27,7 +27,7 @@ const TVPresenter = ({ topRated, popular, airingToday, loading, error }) => {
       )}
       {popular && popular.length > 0 && (
         <Section title={'popular TV Show'}>
-          {topRated.map((value) => (
+          {popular.map((value) => (
             <Poster
               key={value.id}
               id={value.id}
@@ -42,7 +42,7 @@ const TVPresenter = ({ topRated, popular, airingToday, loading, error }) => {
       )}
       {airingToday && airingToday.length > 0 && (
         <Section title={'airingToday TV Show'}>
-          {topRated.map((value) => (
+          {airingToday.map((value) => (
             <Poster
               key={value.id}
               id={value.id}
