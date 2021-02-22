@@ -3,9 +3,9 @@ import { useState, useEffect } from 'react';
 
 import TVPresenter from './TVPresenter';
 const TVContainer = () => {
-  const [topRated, setTopRated] = useState();
-  const [popular, setPopular] = useState();
-  const [airingToday, setAiringToday] = useState();
+  const [topRated, setTopRated] = useState([]);
+  const [popular, setPopular] = useState([]);
+  const [airingToday, setAiringToday] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState();
 
@@ -13,17 +13,18 @@ const TVContainer = () => {
     try {
       const {
         data: { results: topRated },
-      } = tvApi.topRated();
+      } = await tvApi.topRated();
       setTopRated(topRated);
       const {
         data: { results: popular },
-      } = tvApi.popular();
+      } = await tvApi.popular();
       setPopular(popular);
       const {
         data: { results: airingToday },
-      } = tvApi.airingToday();
+      } = await tvApi.airingToday();
       setAiringToday(airingToday);
-    } catch {
+    } catch (error) {
+      console.log(error);
       setError("Can't not result");
     }
     setLoading(false);

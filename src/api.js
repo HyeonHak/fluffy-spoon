@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://api.themoviedb.org/3/',
+  baseURL: 'https://api.themoviedb.org/3',
   params: {
     api_key: '266c12439543d72e070635c5eedd51d7',
     language: 'en-US',
@@ -18,7 +18,7 @@ export const tvApi = {
         append_to_response: 'videos',
       },
     }),
-  searchTVshow: (terms) => api.get(`/search/movie`, { params: { query: encodeURIComponent(terms) } }),
+  searchTVshow: (terms) => api.get(`search/tv`, { params: { query: encodeURIComponent(terms) } }),
 };
 
 export const movieApi = {
